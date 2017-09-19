@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <title>Form to create a new resource</title>
+  <script>
+  $(document).ready(function() {
+  $("#updateData").click(function() {
+	    //alert('name:' + $name.val());
+	    $.ajax({
+	      crossOrigin: true,
+	      method: 'PUT',
+	      dataType: 'json',
+	      contentType: 'application/json',
+	      url: 'rest/shop/products',
+	      data: fornToJSON_ToUpdate(),
+	      success: function(data) {
+	        reload();
+	        $.notify("Data Change Success!!", "success");
+	      }
+	    });
+	  });
+  }
+  function fornToJSON_ToUpdate() {
+	  return JSON.stringify({
+	    "id": $('#uid').val(),
+	    "name": $('#uname').val(),
+	    "sku": $('#sku').val(),
+	    "price": $('#price').val()
+	  });
+	}
+  </script>
+ </head>
+<body>
+Not Updating!!:
+    <form action="rest/shop/products" method="post">
+    <input name="id" value="59b1ebb8e08f7529d8d8f94f" id='uid'/>
+    <input name="name" id='name'/>
+    <input name="sku" id='sku' />
+    <input name="price" id='price' />
+    <input type="button" value="Update" id='updateData'/>
+    </form>
+</body>
+</html>

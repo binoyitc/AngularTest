@@ -7,18 +7,24 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.java.db.MongoSingleton;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
 @Path("/shop")
 public class TestRest {
 
 	//http://localhost:8080/NGDSDMISSO/rest/shop/products
 	@GET
     @Path("products")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public String test() throws IOException {
     	//http://localhost:8080/dmi/sso?dealername=A1234
     	String result = "";
 		try {
-			result = "test";
+			MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("users");
+			Document myDoc = collection.find().first();
+			result = myDoc.toJson();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

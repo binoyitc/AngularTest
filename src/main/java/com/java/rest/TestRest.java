@@ -7,6 +7,7 @@ import java.util.Iterator;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.OPTIONS;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -25,7 +26,19 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 
 @Path("/shop")
-public class TestRest {
+public class TestRest {	
+    
+    @OPTIONS
+    @Path("products/{id}")
+    public Response getOptionsDelete() {
+    	return optionsResult();
+    }
+    
+    @OPTIONS
+    @Path("/products")
+    public Response getJobsOpts() {
+      return optionsResult();
+    }
 
 	private Response createReturn(Object obj) {
 		return Response.ok() // Response.status(200)
@@ -124,4 +137,10 @@ public class TestRest {
 		collection.deleteOne(document);
 		return createReturn(document.toJson());
 	}
+	private Response optionsResult(){
+    	return Response.ok()
+    	        .header("Access-Control-Allow-Origin", "*")
+    	        .header("Access-Control-Allow-Methods", "POST, GET, PUT, UPDATE, OPTIONS, DELETE")
+    	        .header("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With").build();
+    }
 }

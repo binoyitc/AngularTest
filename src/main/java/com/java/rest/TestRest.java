@@ -5,7 +5,6 @@ import java.util.Iterator;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -19,6 +18,7 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 
 import com.java.db.MongoSingleton;
+import com.java.models.Product;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -26,10 +26,16 @@ import com.mongodb.client.MongoCollection;
 @Path("/shop")
 public class TestRest {
 
-	@GET //working
+	private Response createReturn(Object obj) {
+		return Response.ok() // Response.status(200)
+				.entity(obj).header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS").build();
+	}
+
+	@GET // working
 	@Path("products")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getProducts() throws IOException {
+	public Response getProducts() throws IOException {
 		// http://localhost:8080/NGDSDMISSO/rest/shop/products
 		System.out.println("GET for all records");
 		String result = "";
@@ -40,58 +46,62 @@ public class TestRest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return result;
+		return createReturn(result);
 	}
-	@GET //working
+
+	@GET // working
 	@Path("product/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getProduct(@PathParam("id") String id) throws IOException {
-		//http://localhost:8080/AngularTest/rest/shop/product/59b1ebb8e08f7529d8d8f94f
+		// http://localhost:8080/AngularTest/rest/shop/product/59b1ebb8e08f7529d8d8f94f
 		System.out.println("GET for Find-->id:" + id);
 		String result = "";
 		Document myDoc = null;
 		try {
 			MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
 			BasicDBObject query = new BasicDBObject();
-	        query.put("_id", new ObjectId(id));
-	        FindIterable<Document> cursor3 =collection.find(query);
-	        Iterator itr3 = cursor3.iterator();
-	        while(itr3.hasNext()) {
-	        	myDoc =(Document) itr3.next();
-	        }
+			query.put("_id", new ObjectId(id));
+			FindIterable<Document> cursor3 = collection.find(query);
+			Iterator itr3 = cursor3.iterator();
+			while (itr3.hasNext()) {
+				myDoc = (Document) itr3.next();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		result = myDoc.toJson();
-		return Response.status(200).entity(result).build();
+		return createReturn(result);
 	}
 
-	@POST //working
+	@POST
 	@Path("/products")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public Response insertProducts(@FormParam("name") String name, @FormParam("sku") String sku,
-			@FormParam("price") int price) throws Exception {
-		System.out.println("POST for Insert-->name:" + name + " sku:" + sku + " Price:" + price);
+	public Response insertJSonProducts(Product product) throws Exception {
+		System.out.println("JSON POST for Insert-->name:" + product.getName() + " sku:" + product.getSku() + " Price:"
+				+ product.getPrice());
 		MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
-		Document document = new Document("name", name).append("sku", sku).append("price", price);
+		Document document = new Document("name", product.getName()).append("sku", product.getSku()).append("price",
+				product.getPrice());
 		collection.insertOne(document);
-		return Response.status(200).entity(document.toJson()).build();
+		return createReturn(document.toJson());
 	}
 
 	@PUT
 	@Path("/products")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public Response updateProducts(@FormParam("id") String id, @FormParam("name") String name, @FormParam("sku") String sku,
-			@FormParam("price") int price) throws Exception {
-		System.out.println("PUT for Update --> name:" + name + " sku:" + sku + " Price:" + price);
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response updateProducts(Product product) {
+		System.out.println("JSON PUT for Update --> name:" + product.getName() + " sku:" + product.getSku() + " Price:"
+				+ product.getPrice());
 		MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
-		Document document = new Document("name", name).append("sku", sku).append("price", price);
+		Document document = new Document("name", product.getName()).append("sku", product.getSku()).append("price",
+				product.getPrice());
 		BasicDBObject query = new BasicDBObject();
-        query.put("_id", new ObjectId(id));
-		collection.updateOne(query,document);
-		return Response.status(200).entity(document.toJson()).build();
+		query.put("_id", new ObjectId(product.getId()));
+		collection.replaceOne(query, document);
+		return createReturn(document.toJson());
+
 	}
 
 	@DELETE
@@ -99,6 +109,12 @@ public class TestRest {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response deleteProducts(@PathParam("id") String id) {
 		MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
-		return Response.status(200).entity("Product deteted").build();
+		/*
+		 * BasicDBObject query = new BasicDBObject(); query.put("_id", new
+		 * ObjectId(id));
+		 */
+		Document document = new Document("_id", new ObjectId(id));
+		collection.deleteOne(document);
+		return createReturn(document.toJson());
 	}
 }

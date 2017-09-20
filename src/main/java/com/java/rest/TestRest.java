@@ -1,6 +1,7 @@
 package com.java.rest;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.ws.rs.Consumes;
@@ -38,11 +39,17 @@ public class TestRest {
 	public Response getProducts() throws IOException {
 		// http://localhost:8080/NGDSDMISSO/rest/shop/products
 		System.out.println("GET for all records");
+		ArrayList<String> list = new ArrayList<String>();
 		String result = "";
 		try {
 			MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
-			Document myDoc = collection.find().first();
-			result = myDoc.toJson();
+			//Document myDoc = collection.find();
+			FindIterable<Document> cursor3 = collection.find();
+			Iterator itr3 = cursor3.iterator();
+			while (itr3.hasNext()) {
+				list.add(((Document) itr3.next()).toJson());
+			}
+			result = list.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,7 +57,7 @@ public class TestRest {
 	}
 
 	@GET // working
-	@Path("product/{id}")
+	@Path("products/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getProduct(@PathParam("id") String id) throws IOException {
 		// http://localhost:8080/AngularTest/rest/shop/product/59b1ebb8e08f7529d8d8f94f

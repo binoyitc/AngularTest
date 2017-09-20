@@ -52,7 +52,7 @@ public class TestRest {
 	public Response getProducts() throws IOException {
 		// http://localhost:8080/NGDSDMISSO/rest/shop/products
 		System.out.println("GET for all records");
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<Product> list = new ArrayList<Product>();
 		String result = "";
 		try {
 			MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
@@ -60,13 +60,13 @@ public class TestRest {
 			FindIterable<Document> cursor3 = collection.find();
 			Iterator itr3 = cursor3.iterator();
 			while (itr3.hasNext()) {
-				list.add(((Document) itr3.next()).toJson());
+				list.add(createProduct((Document) itr3.next()));
 			}
-			result = list.toString();
+			//result = list.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return createReturn(result);
+		return createReturn(list);
 	}
 
 	@GET // working
@@ -75,7 +75,7 @@ public class TestRest {
 	public Response getProduct(@PathParam("id") String id) throws IOException {
 		// http://localhost:8080/AngularTest/rest/shop/product/59b1ebb8e08f7529d8d8f94f
 		System.out.println("GET for Find-->id:" + id);
-		String result = "";
+		//String result = "";
 		Document myDoc = null;
 		try {
 			MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("products");
@@ -89,8 +89,8 @@ public class TestRest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		result = myDoc.toJson();
-		return createReturn(result);
+		//result = myDoc.toJson();
+		return createReturn(createProduct(myDoc));
 	}
 
 	@POST
@@ -104,7 +104,7 @@ public class TestRest {
 		Document document = new Document("name", product.getName()).append("sku", product.getSku()).append("price",
 				product.getPrice());
 		collection.insertOne(document);
-		return createReturn(document.toJson());
+		return createReturn(createProduct(document));
 	}
 
 	@PUT
@@ -120,7 +120,7 @@ public class TestRest {
 		BasicDBObject query = new BasicDBObject();
 		query.put("_id", new ObjectId(product.getId()));
 		collection.replaceOne(query, document);
-		return createReturn(document.toJson());
+		return createReturn(createProduct(document));
 
 	}
 
@@ -135,7 +135,7 @@ public class TestRest {
 		 */
 		Document document = new Document("_id", new ObjectId(id));
 		collection.deleteOne(document);
-		return createReturn(document.toJson());
+		return createReturn(createProduct(document));
 	}
 	private Response optionsResult(){
     	return Response.ok()
@@ -143,4 +143,13 @@ public class TestRest {
     	        .header("Access-Control-Allow-Methods", "POST, GET, PUT, UPDATE, OPTIONS, DELETE")
     	        .header("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With").build();
     }
+	
+	private Product createProduct(Document document){
+		Product product = new Product();
+		product.setId(document.get("_id") != null? document.get("_id").toString() : "");
+		product.setName(document.get("name") != null? (String)document.get("name"): "" );
+		product.setSku(document.get("sku") != null? (String)document.get("sku") : "");
+		product.setPrice(document.get("price")  != null? (Integer)document.get("price"): 0);		
+		return product;
+	}
 }

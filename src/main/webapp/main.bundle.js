@@ -388,7 +388,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ProductsService = (function () {
     function ProductsService(http) {
         this.http = http;
-        this.commentsUrl = 'http://angulartest-angulartest.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products';
+        this.commentsUrl = 'http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products';
     }
     ProductsService.prototype.getProducts = function () {
         return this.http
@@ -410,7 +410,7 @@ var ProductsService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers }); // Create a request option
         console.log(data2);
-        return this.http.post('http://angulartest-angulartest.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
+        return this.http.post('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
             .map(function (response) {
             //const products = response.json();
             return response.json();
@@ -421,7 +421,7 @@ var ProductsService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: headers }); // Create a request option
         return this.http
-            .delete('http://angulartest-angulartest.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/' + id, options)
+            .delete('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/' + id, options)
             .map(function (response) { return null; })
             .catch(this.handleError);
         //.subscribe(() => console.log('res'));
@@ -429,7 +429,7 @@ var ProductsService = (function () {
     ProductsService.prototype.updateProduct = function (product) {
         var productForUpdate = new __WEBPACK_IMPORTED_MODULE_6__ProductForUpdate__["a" /* ProductForUpdate */](product.id, product.name, product.sku, product.price);
         return this.http
-            .put('http://angulartest-angulartest.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/', productForUpdate)
+            .put('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/', productForUpdate)
             .map(function (response) {
             return new __WEBPACK_IMPORTED_MODULE_5__products__["a" /* Product */](response.json());
         })
@@ -440,7 +440,7 @@ var ProductsService = (function () {
         let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options       = new RequestOptions({ headers: headers }); // Create a request option
         console.log(data2);
-        this.http.post('http://angulartest-angulartest.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
+        this.http.post('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
         .map(res => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error')) //...errors if
         .subscribe();
@@ -454,7 +454,7 @@ var ProductsService = (function () {
         let options       = new RequestOptions({ headers: headers }); // Create a request option
 
         console.log(data2);
-        this.http.post('http://angulartest-angulartest.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
+        this.http.post('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
         .map(res => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error')) //...errors if
         .subscribe();

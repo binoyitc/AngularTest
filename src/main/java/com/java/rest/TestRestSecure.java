@@ -52,20 +52,20 @@ public class TestRestSecure {
     @OPTIONS
     @Path("products/{id}")
     public Response getOptionsDelete(@Context HttpServletRequest request) throws OAuthSystemException {
-    	Response response = verifyToken(request);
+    	/*Response response = verifyToken(request);
 		if(response != null){
 			return response;
-		}
+		}*/
     	return optionsResult();
     }
     
     @OPTIONS
     @Path("/products")
     public Response getJobsOpts(@Context HttpServletRequest request) throws OAuthSystemException {
-    	Response response = verifyToken(request);
+    	/*Response response = verifyToken(request);
 		if(response != null){
 			return response;
-		}
+		}*/
       return optionsResult();
     }
 

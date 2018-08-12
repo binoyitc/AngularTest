@@ -153,11 +153,12 @@ public class Scheduler {
 	@Path("/jobs/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response deleteProducts(@PathParam("id") String id) {
-		MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("jobs");
+		MongoCollection<Document> collection = MongoSingleton.getConnection().getCollection("schedulejobs");
 		/*
 		 * BasicDBObject query = new BasicDBObject(); query.put("_id", new
 		 * ObjectId(id));
 		 */
+		System.out.println("inside delete");
 		Document document = new Document("_id", new ObjectId(id));
 		collection.deleteOne(document);
 		return createReturn(createJobObj(document));

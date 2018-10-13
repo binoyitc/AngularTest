@@ -26,6 +26,22 @@
     offset: 54
   });
 
+
+/*setInterval(function() { changeImage(); }, 10000);
+var flag = true;
+var changeImage = function(){
+  console.log('inside changeImage' + flag);
+  if(flag){
+    flag = false;
+    console.log('inside changeImage cond 1' );
+    $("#headerImage").css('background', "url('http://www.cochin1.com/img/header-bg.jpg') no-repeat 0 0"); 
+  }else{
+    flag = true;
+    console.log('inside changeImage cond 2' )
+    $("#headerImage").css('background', "url('assets/img/header-bg2.jpg') no-repeat 0 0"); 
+  }  
+}*/
+
   // Collapse Navbar
   var navbarCollapse = function() {    
     ($("#headerStyle").attr('value'));

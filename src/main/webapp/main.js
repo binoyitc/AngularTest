@@ -23,6 +23,171 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/animation.ts":
+/*!******************************!*\
+  !*** ./src/app/animation.ts ***!
+  \******************************/
+/*! exports provided: slideInAnimation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slideInAnimation", function() { return slideInAnimation; });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+
+
+
+
+var slideInAnimation = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('routeAnimations', [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> HomePage', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ position: 'relative' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter, :leave', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%'
+            })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '-100%' })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '100%' }))
+            ]),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '0%' }))
+            ])
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+    ]),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> ShoppingPage', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ position: 'relative' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter, :leave', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%'
+            })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '-100%' })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '100%' }))
+            ]),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '0%' }))
+            ])
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+    ]),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> FoodPage', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ position: 'relative' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter, :leave', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%'
+            })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '-100%' })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('200ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '100%' }))
+            ]),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '0%' }))
+            ])
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+    ]),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> ContactPage', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ position: 'relative' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter, :leave', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%'
+            })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '-100%' })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '100%' }))
+            ]),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '0%' }))
+            ])
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+    ]),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> WhattovisitPage', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ position: 'relative' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter, :leave', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%'
+            })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '-100%' })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '100%' }))
+            ]),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '0%' }))
+            ])
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+    ]),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> WheretostayPage', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ position: 'relative' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter, :leave', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%'
+            })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '-100%' })
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '100%' }))
+            ]),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('300ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ left: '0%' }))
+            ])
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animateChild"])()),
+    ]),
+]);
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -56,12 +221,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', component: src_app_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
-    { path: 'shopping', component: src_app_shopping_shopping_component__WEBPACK_IMPORTED_MODULE_3__["ShoppingComponent"] },
-    { path: 'food', component: src_app_food_food_component__WEBPACK_IMPORTED_MODULE_4__["FoodComponent"] },
-    { path: 'contact', component: src_app_contact_contact_component__WEBPACK_IMPORTED_MODULE_5__["ContactComponent"] },
-    { path: 'whattovisit', component: src_app_whattovisit_whattovisit_component__WEBPACK_IMPORTED_MODULE_6__["WhattovisitComponent"] },
-    { path: 'wheretostay', component: src_app_wheretostay_wheretostay_component__WEBPACK_IMPORTED_MODULE_7__["WheretostayComponent"] }
+    { path: '', component: src_app_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], data: { animation: 'HomePage' } },
+    { path: 'shopping', component: src_app_shopping_shopping_component__WEBPACK_IMPORTED_MODULE_3__["ShoppingComponent"], data: { animation: 'ShoppingPage' } },
+    { path: 'food', component: src_app_food_food_component__WEBPACK_IMPORTED_MODULE_4__["FoodComponent"], data: { animation: 'FoodPage' } },
+    { path: 'contact', component: src_app_contact_contact_component__WEBPACK_IMPORTED_MODULE_5__["ContactComponent"], data: { animation: 'ContactPage' } },
+    { path: 'whattovisit', component: src_app_whattovisit_whattovisit_component__WEBPACK_IMPORTED_MODULE_6__["WhattovisitComponent"], data: { animation: 'WhattovisitPage' } },
+    { path: 'wheretostay', component: src_app_wheretostay_wheretostay_component__WEBPACK_IMPORTED_MODULE_7__["WheretostayComponent"], data: { animation: 'WheretostayPage' } }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -97,7 +262,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark fixed-top {{headerStyle}}\" id=\"mainNav\">\n  <div class=\"container\">\n    <a class=\"navbar-brand js-scroll-trigger\" routerLink=\"\">{{siteName}}</a>\n    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\"\n      aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            Menu\n            <i class=\"fa fa-bars\"></i>\n          </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n      <ul class=\"navbar-nav text-uppercase ml-auto\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" id='shipping' routerLink=\"shopping\">{{heading1}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"food\">{{heading2}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"whattovisit\">{{heading3}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"wheretostay\">{{heading4}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"contact\">{{heading5}}</a>\n        </li>\n      </ul>\n    </div>   \n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n\n<!-- Footer -->\n<footer>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-4\">\n          <span class=\"copyright\">Copyright &copy; Cochin1 Website 2018</span>\n        </div>\n        <div class=\"col-md-4\">\n          <ul class=\"list-inline social-buttons\">\n            <li class=\"list-inline-item\">\n              <a href=\"#\">\n                <i class=\"fa fa-twitter\"></i>\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a href=\"https://www.facebook.com/Cochin1-1632395833484480/\" target=\"_blank\">\n                <i class=\"fa fa-facebook\"></i>\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a href=\"#\">\n                <i class=\"fa fa-linkedin\"></i>\n              </a>\n            </li>\n          </ul>\n        </div>\n        <div class=\"col-md-4\">\n          <ul class=\"list-inline quicklinks\">\n            <li class=\"list-inline-item\">\n              <a href=\"#\">Privacy Policy</a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a href=\"#\">Terms of Use</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </footer>\n  <input type='hidden' id='headerStyle' value='{{headerStyle}}'>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark fixed-top {{headerStyle}}\" id=\"mainNav\">\n  <div class=\"container\">\n    <a class=\"navbar-brand js-scroll-trigger\" routerLink=\"\">{{siteName}}</a>\n    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\"\n      aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            Menu\n            <i class=\"fa fa-bars\"></i>\n          </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n      <ul class=\"navbar-nav text-uppercase ml-auto\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" id='shipping' routerLink=\"shopping\">{{heading1}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"food\">{{heading2}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"whattovisit\">{{heading3}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"wheretostay\">{{heading4}}</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link js-scroll-trigger\" routerLink=\"contact\">{{heading5}}</a>\n        </li>\n      </ul>\n    </div>   \n  </div>\n</nav>\n\n<div [@routeAnimations]=\"prepareRoute(outlet)\" >\n  <router-outlet #outlet=\"outlet\"></router-outlet>\n</div>\n\n<!-- Footer -->\n<footer>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-4\">\n          <span class=\"copyright\">Copyright &copy; Cochin1 Website 2018</span>\n        </div>\n        <div class=\"col-md-4\">\n          <ul class=\"list-inline social-buttons\">\n            <li class=\"list-inline-item\">\n              <a href=\"#\">\n                <i class=\"fa fa-twitter\"></i>\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a href=\"https://www.facebook.com/Cochin1-1632395833484480/\" target=\"_blank\">\n                <i class=\"fa fa-facebook\"></i>\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a href=\"#\">\n                <i class=\"fa fa-linkedin\"></i>\n              </a>\n            </li>\n          </ul>\n        </div>\n        <div class=\"col-md-4\">\n          <ul class=\"list-inline quicklinks\">\n            <li class=\"list-inline-item\">\n              <a href=\"#\">Privacy Policy</a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a href=\"#\">Terms of Use</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </footer>\n  <input type='hidden' id='headerStyle' value='{{headerStyle}}'>\n"
 
 /***/ }),
 
@@ -113,6 +278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_global_param_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/global-param-service.service */ "./src/app/global-param-service.service.ts");
+/* harmony import */ var src_app_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/animation */ "./src/app/animation.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,6 +288,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 var AppComponent = /** @class */ (function () {
@@ -140,11 +307,18 @@ var AppComponent = /** @class */ (function () {
             console.log(text);
         });
     }
+    AppComponent.prototype.prepareRoute = function (outlet) {
+        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
+            animations: [
+                src_app_animation__WEBPACK_IMPORTED_MODULE_2__["slideInAnimation"]
+                // animation triggers go here
+            ]
         }),
         __metadata("design:paramtypes", [src_app_global_param_service_service__WEBPACK_IMPORTED_MODULE_1__["GlobalParamServiceService"]])
     ], AppComponent);
@@ -166,15 +340,16 @@ var AppComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _shopping_shopping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shopping/shopping.component */ "./src/app/shopping/shopping.component.ts");
-/* harmony import */ var _food_food_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./food/food.component */ "./src/app/food/food.component.ts");
-/* harmony import */ var _whattovisit_whattovisit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./whattovisit/whattovisit.component */ "./src/app/whattovisit/whattovisit.component.ts");
-/* harmony import */ var _wheretostay_wheretostay_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./wheretostay/wheretostay.component */ "./src/app/wheretostay/wheretostay.component.ts");
-/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _shopping_shopping_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shopping/shopping.component */ "./src/app/shopping/shopping.component.ts");
+/* harmony import */ var _food_food_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./food/food.component */ "./src/app/food/food.component.ts");
+/* harmony import */ var _whattovisit_whattovisit_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./whattovisit/whattovisit.component */ "./src/app/whattovisit/whattovisit.component.ts");
+/* harmony import */ var _wheretostay_wheretostay_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./wheretostay/wheretostay.component */ "./src/app/wheretostay/wheretostay.component.ts");
+/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -191,26 +366,28 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _shopping_shopping_component__WEBPACK_IMPORTED_MODULE_4__["ShoppingComponent"],
-                _food_food_component__WEBPACK_IMPORTED_MODULE_5__["FoodComponent"],
-                _whattovisit_whattovisit_component__WEBPACK_IMPORTED_MODULE_6__["WhattovisitComponent"],
-                _wheretostay_wheretostay_component__WEBPACK_IMPORTED_MODULE_7__["WheretostayComponent"],
-                _contact_contact_component__WEBPACK_IMPORTED_MODULE_8__["ContactComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _shopping_shopping_component__WEBPACK_IMPORTED_MODULE_5__["ShoppingComponent"],
+                _food_food_component__WEBPACK_IMPORTED_MODULE_6__["FoodComponent"],
+                _whattovisit_whattovisit_component__WEBPACK_IMPORTED_MODULE_7__["WhattovisitComponent"],
+                _wheretostay_wheretostay_component__WEBPACK_IMPORTED_MODULE_8__["WheretostayComponent"],
+                _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -487,12 +664,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var HomeComponent = /** @class */ (function () {
+    // 'http://www.cochin1.com/img/header-bg.jpg';
     function HomeComponent(globalParamServiceService) {
         this.globalParamServiceService = globalParamServiceService;
         this.header1 = 'Welcome To Cochin1.com!';
         this.header2 = 'Gateway to Cochin..';
         this.button1 = 'Tell Me More';
-        this.homeBkGrImage = 'assets/img/header-bg3.jpg'; //'http://www.cochin1.com/img/header-bg.jpg';
+        this.homeBkGrImage = 'assets/img/header-bg3.jpg';
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.globalParamServiceService.emitChange('home');
